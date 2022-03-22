@@ -6,11 +6,39 @@
 
         <div class="col-md-10">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search..."/>
+                <input type="text" class="form-control" placeholder="Search..." id ="movie-search-box"[(ngModel)]="searchTerm"/>
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-secondary">
+                    <button type="button" class="btn btn-outline-secondary" onkeyup="findMovie()">
                         <em class="fa fa-search"></em>
                     </button>
+                </div>
+            </div>
+            <div class ="search-list" id = "search-list">
+                <div class="search-list-item">
+                    <div class="search-list-thumbnail">
+                        <div class="search-item-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="result-container">
+                <div class="result-grid" id="result-grid">
+                    <div class="movie-poster">
+
+                    </div>
+                    <div class="movie-info">
+                        <h3 class = "movie-title"></h3>
+                        <ul class = "movie-misc-info">
+                            <li class = "year"></li>
+                            <li class = "rated"></li>
+                            <li class = "released"></li>
+
+                        </ul>
+                        <p class = "genre"></p>
+                        <p class = "writer"></p>
+                    </div>
                 </div>
             </div>
         </div>
