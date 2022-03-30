@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SearchService {
-  apiKey = environment.apiKey;
+  
   
   constructor(private http: HttpClient) { 
    
     
   }
 
+  searchByTitle(title:any):Observable<any> {
   
+    
+    return this.http.get(`http://www.omdbapi.com/?s=${title}&page=1&apikey=93bca4d2`)
+        
+  }
   
 }

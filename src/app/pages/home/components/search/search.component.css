@@ -1,79 +1,84 @@
-img {
-    width: 50px;
-    display: block;
-    margin: 0 auto;
+body{
+    background-color: rgb(40, 109, 86);
 }
-
-.input-group{
-    margin-top: 10px;
-}
-
-.input-group input{
-    border-right: none;
-}
-
-.input-group .btn{
-    border-radius: 0px;
-    border-left: 0px;
-    border-color: #ced4da;
-}
-
-.search-list{
-    position: absolute;
-    right: 0;
-    top: 100%;
-    max-height: 500px;
-    overflow-y: scroll;
-    z-index: 10;
-}
-
-.search-list .search-list-item{
-    background-color: var(--light-dark-color);
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--dark-color);
-    width: calc(350px - 8px);
-    color: #fff;
-    cursor: pointer;
-    -webkit-transition: background-color 200ms ease;
-    -o-transition: background-color 200ms ease;
-    transition: background-color 200ms ease;
-}
-.search-list .search-list-item:Hover{
-    background-color: #1f1f1f;
-}
-.search-list-item{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.search-item-thumbnail img{
-    width: 40px;
-    margin-right: 1rem;
-}
-.search-item-info h3{
-    font-weight: 600;
-    font-size: 1rem;
-}
-.search-item-info p{
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
-    opacity: 0.6;
-}
-
-/* thumbnail */
-.search-list::-webkit-scrollbar{
-    width: 8px;
-}
-.search-list::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-.search-list::-webkit-scrollbar-thumb{
-    background-color: var(--yellow-color);
+/*img  {
+    height: 60px;
+  
+     border-radius: 10px; 
     outline: none;
-    border-radius: 10px;
+    border: none;
+    width: 7vw;
+    padding: 10px 20px;
+    
+
+    <div style="padding: 1px;"></div>
+                <div class="col-md-2">
+                    <img src="../../../../../assets/img/logo.jpg" id = "123" alt=""/>
+                </div>
+}*/
+.movieSearchContainer{
+    /* background-color: black; */
+    /* height: 10vh; */
+    display: flex;
+    justify-content: center;
+
 }
+.movieSearchContainer h3{
+    font-size: 20px;
+}
+
+.movieSearchContainer input{
+    height: 40px;
+  
+    /* border-radius: 10px; */
+    outline: none;
+    border: none;
+    width: 30vw;
+    padding: 5px 20px;
+}
+
+
+.container{
+    min-width: 322px;
+    /* top: 55px; */
+    /* position: fixed; */
+    text-align: left;
+    /* left: 445px; */
+    background: #3f3f3c;
+    padding: 20px;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.container .movieItem{
+    color: white;
+}
+
+.container .movieItem:hover{
+
+    background-color: #1c1d1e;
+    opacity: 0.5;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: yellow; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: yellow; 
+  }

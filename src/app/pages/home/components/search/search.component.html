@@ -1,46 +1,43 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <img src="../../../../../assets/img/logo.jpg" alt=""/>
-        </div>
-
-        <div class="col-md-10">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search..." id ="movie-search-box"[(ngModel)]="searchTerm"/>
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-secondary" onkeyup="findMovie()">
-                        <em class="fa fa-search"></em>
-                    </button>
+<div style="background-color: black;height: 100vh;" >
+            <div class="movieSearchContainer">
+                
+                
+                <div style="padding: 10px;">
+                    
+                    <h3 style="color: white;">Search Movie:</h3>
+                    
                 </div>
-            </div>
-            <div class ="search-list" id = "search-list">
-                <div class="search-list-item">
-                    <div class="search-list-thumbnail">
-                        <div class="search-item-info"></div>
+            
+                <div style="padding: 10px;">
+                    
+                    <input #searchMovie   type="text"  placeholder="search movie title">
+                    <div *ngIf="showContainer" class="container">
+               
+                        <div class="movieItem" style="cursor: pointer;" *ngFor="let item of movies">
+                            <div (click)="selectMovie(item)">{{item.Title}}</div>
+                            <hr>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         
-        <div class="container">
-            <div class="result-container">
-                <div class="result-grid" id="result-grid">
-                    <div class="movie-poster">
-
+        
+            <div style="margin-top: 25px;" *ngIf="showMovie">
+                <div style="display: flex; justify-content: center;">
+                    <div style="margin-right: 10px;border: 2px solid beige;">
+                        <img src={{selectedMovie.Poster}}>
                     </div>
-                    <div class="movie-info">
-                        <h3 class = "movie-title"></h3>
-                        <ul class = "movie-misc-info">
-                            <li class = "year"></li>
-                            <li class = "rated"></li>
-                            <li class = "released"></li>
-
-                        </ul>
-                        <p class = "genre"></p>
-                        <p class = "writer"></p>
+                    <div style="margin-left: 10px;">
+                        <p style="color: #e7ad00;font-size: 30px;text-transform: capitalize;font-weight: 800;">{{selectedMovie.Title}}</p>
+                        <p style="color: white;"><strong >Genre: </strong>{{selectedMovie.Genre}}</p>
+                        <p style="color: white;"><strong >Year: </strong>{{selectedMovie.Year}}</p>
+                        <p style="color: white;"><strong >Director: </strong>{{selectedMovie.Director}}</p>
+        
+        
                     </div>
                 </div>
+               
             </div>
+            
+            
         </div>
-    </div>
-</div>
