@@ -24,6 +24,8 @@ export class MymovielistComponent implements OnInit {
             this._router.navigate(['/login'])
 
           }
+
+          
         }
       }
     )
