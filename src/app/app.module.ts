@@ -13,6 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MymovielistComponent } from './myMovieList/mymovielist/mymovielist.component'
+import { AuthService } from './auth.service';
+import { MovielistService } from './movielist.service';
 
 const routes: Routes = [
   {
@@ -57,7 +59,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
     
   ],
-  providers: [],
+  providers: [AuthService, MovielistService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
