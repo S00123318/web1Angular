@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { MovielistService } from './movielist.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AdminComponent } from './auth/admin/admin.component';
 const routes: Routes = [
   {
      path:'',
@@ -51,7 +52,8 @@ const routes: Routes = [
     ResultsComponent,
     RegisterComponent,
     LoginComponent,
-    MymovielistComponent
+    MymovielistComponent,
+    AdminComponent
   ],
   imports: [
     
