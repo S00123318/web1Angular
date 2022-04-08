@@ -9,13 +9,14 @@ import { SearchComponent } from './pages/home/components/search/search.component
 import { ResultsComponent } from './pages/home/components/results/results.component';
 import { FormsModule } from '@angular/forms';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MymovielistComponent } from './myMovieList/mymovielist/mymovielist.component'
 import { AuthService } from './auth.service';
 import { MovielistService } from './movielist.service';
-
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 const routes: Routes = [
   {
      path:'',
@@ -30,7 +31,8 @@ const routes: Routes = [
   },
   {
       path: 'mymovielist',
-      component: MymovielistComponent
+      component: MymovielistComponent,
+      canActivate: [AuthGuard]
   }, 
   {
       path: 'login',
@@ -55,11 +57,17 @@ const routes: Routes = [
     
     BrowserModule,
     FormsModule,
+    
     HttpClientModule,
     RouterModule.forRoot(routes)
     
   ],
-  providers: [AuthService, MovielistService],
+  providers: [AuthService, AuthGuard, MovielistService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 
 })
